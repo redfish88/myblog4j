@@ -13,15 +13,43 @@
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="/login.do">loginController</prop>
+				<prop key="/admin/login.do">loginController</prop>
+				<prop key="/admin/forward.do">forwardController</prop>
 			</props>
+		</property>
+		<property name="defaultHandler" ref="forwardController" />
+	</bean>
+
+	<bean id="forwardController"
+		class="org.ya.blog.cmd.ForwardController">
+		<property name="methodNameResolver">
+			<ref bean="methodNameResolver" />
 		</property>
 	</bean>
 
-	<bean id="loginController" class="com.ya.blog.cmd.LoginController">
-		<!--
-			<property name="helloManager" ref="helloManager" />
-		-->
+		<bean name="methodNameResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+		<props>
+		<prop key="/admin/adminlogin.do">toAdminLoginPage</prop>
+		</props>
+		</property>
+		</bean>
+
+	<!-- 
+	<bean id="paramMethodResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName">
+			<value>act</value>
+		</property>
+	</bean>
+	-->
+
+
+
+
+	<bean id="loginController"
+		class="org.ya.blog.cmd.LoginController">
 	</bean>
 
 </beans>
