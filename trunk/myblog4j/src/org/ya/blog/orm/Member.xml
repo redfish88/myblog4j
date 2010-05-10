@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Member">
+	<select id="findByPk" resultClass="org.ya.blog.orm.Member">
+		select memberId as memberId,
+		nickname as nickname,
+		password as password,
+		email as email,
+		alias as alias
+		from member
+		where memberId = #value#
+	</select>
+	<insert id="addMember" parameterClass="org.ya.blog.orm.Member">
+		insert into 
+		Member(memberId,nickname,password,email,alias)
+		values(#memberId#,#nickname#,#password#,#email#,#alias#)
+	</insert>
+	<update id="updateMember" parameterClass="org.ya.blog.orm.Member">
+		update member
+		set nickname = #nickname#,
+		password = #password#,
+		email = #email#,
+		alias = #alias#
+		where memberId = #memberId#
+	</update>
+	<delete id="delMember" parameterClass="org.ya.blog.orm.Member">
+		delete member where memberId = #memberId#
+	</delete>
+</sqlMap>
