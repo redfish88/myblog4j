@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tag">
+	<select id="findByPk" resultClass="org.ya.blog.orm.Tag">
+		select tagId as tagId,
+		tag as tag
+		from Tags
+		where tagId = #value#
+	</select>
+	<insert id="addTag" parameterClass="org.ya.blog.orm.Tag">
+		insert into 
+		tags(tagId,tag)
+		values(#tagId#,#tag#)
+	</insert>
+	<update id="updateTag" parameterClass="org.ya.blog.orm.Tag">
+		update tags
+		set tag = #tag#
+		where tagId = #tagId#
+	</update>
+	<delete id="delTag" parameterClass="org.ya.blog.orm.Tag">
+		delete tags where tagId = #tagId#
+	</delete>
+</sqlMap>

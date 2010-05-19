@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Article">
+	<select id="findByPk" resultClass="org.ya.blog.orm.Article">
+		select articleId as articleId,
+		title as title,
+		context as context,
+		tags as tags,
+		author as author,
+		trackback as trackback,
+		hidden as hidden
+		from Article
+		where ArticleId = #value#
+	</select>
+	<insert id="addArticle" parameterClass="org.ya.blog.orm.Article">
+		insert into 
+		Article(articleId,title,context,tags,author,trackback,hidden)
+		values(#articleId#,#title#,#context#,#tags#,#author#,#trackback#,#hidden#)
+	</insert>
+	<update id="updateArticle" parameterClass="org.ya.blog.orm.Article">
+		update article
+		set title = #title#,
+		context = #context#,
+		tags = #tags#,
+		author = #author#,
+		trackback = #trackback#,
+		hidden = #hidden#
+		where articleId = #articleId#
+	</update>
+	<delete id="delArticle" parameterClass="org.ya.blog.orm.Article">
+		delete article where articleId = #articleId#
+	</delete>
+</sqlMap>
