@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Type">
+	<select id="findByPk" resultClass="org.ya.blog.orm.Type">
+		select typeId as typeId,
+		type as type,
+		depict as depict,
+		rootId as rootId
+		from Type
+		where typeId = #value#
+	</select>
+	<insert id="addType" parameterClass="org.ya.blog.orm.Type">
+		insert into 
+		type(typeId,type,depict,rootId)
+		values(#typeId#,#type#,#depict#,#rootId#)
+	</insert>
+	<update id="updateType" parameterClass="org.ya.blog.orm.Type">
+		update type
+		set type = #type#,
+		depict = #depict#,
+		rootId = #rootId#
+		where typeId = #typeId#
+	</update>
+	<delete id="delType" parameterClass="org.ya.blog.orm.Type">
+		delete type where typeId = #typeId#
+	</delete>
+</sqlMap>

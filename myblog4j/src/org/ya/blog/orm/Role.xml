@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Role">
+	<select id="findByPk" resultClass="org.ya.blog.orm.Role">
+		select roleId as roleId,
+		roleName as roleName,
+		rolePermission as rolePermission
+		from Role
+		where RoleId = #value#
+	</select>
+	<insert id="addRole" parameterClass="org.ya.blog.orm.Role">
+		insert into 
+		Role(roleId,roleName,rolePermission)
+		values(#roleId#,#roleName#,#rolePermission#)
+	</insert>
+	<update id="updateRole" parameterClass="org.ya.blog.orm.Role">
+		update role
+		set roleName = #roleName#,
+		rolePermission = #rolePermission#
+		where roleId = #roleId#
+	</update>
+	<delete id="delRole" parameterClass="org.ya.blog.orm.Role">
+		delete role where roleId = #roleId#
+	</delete>
+</sqlMap>
