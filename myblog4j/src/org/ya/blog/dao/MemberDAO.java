@@ -11,19 +11,22 @@ public class MemberDAO {
 	public MemberDAO() {
 	}
 
-	public void saveMember() throws SQLException
-	{
-		Member instance = new Member();
-		instance.setEmail("redfish@w-ya.com");
-		instance.setPassword("123");
-		instance.setAlias("redfish");
-		instance.setNickname("lvrenkun");
-
-		
-		SqlMapFactory.SQLMAP.insert("addMember", instance);
-		
+	/**
+	 * 保存用户
+	 * @param instance
+	 * @throws SQLException
+	 */
+	public void saveMember(Member instance) throws SQLException
+	{	
+		SqlMapFactory.SQLMAP.insert("addMember", instance);	
 	}
 	
+	/**
+	 * 根据主键进行查询
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
 	public Member findByPk(int id) throws SQLException
 	{
 		
@@ -31,11 +34,31 @@ public class MemberDAO {
 		return instance;
 	}
 	
+	/**
+	 * 更新用户
+	 * @param instance
+	 * @throws SQLException
+	 */
+	public void updateMember(Member instance) throws SQLException
+	{
+		SqlMapFactory.SQLMAP.update("updateMember", instance);
+	}
+	
+	/**
+	 * 删除用户
+	 * @param id
+	 * @throws SQLException
+	 */
+	public void deleteMember(int id) throws SQLException
+	{
+		SqlMapFactory.SQLMAP.delete("delMember",id);
+	}
+	
 	public static void main(String [] args) throws SQLException
 	{
-		MemberDAO dao = new MemberDAO();
-		Member instance = dao.findByPk(1);
-//		System.out.println(instance.getNickname());
-		dao.saveMember();
+//		MemberDAO dao = new MemberDAO();
+//		Member instance = dao.findByPk(1);
+////		System.out.println(instance.getNickname());
+//		dao.saveMember();
 	}
 }
