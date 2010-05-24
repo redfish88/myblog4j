@@ -10,6 +10,8 @@
 		from member
 		where memberId = #value#
 	</select>
+	<select id="" resultClass="">
+	</select>
 	<insert id="addMember" parameterClass="org.ya.blog.orm.Member">
 		insert into 
 		Member(memberId,nickname,password,email,alias)
