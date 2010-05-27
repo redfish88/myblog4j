@@ -11,6 +11,6 @@ public class MemberBO {
 
 	public Member findByPk(int id) throws SQLException
 	{
-		return null;	
+		return null;
 	}
 }
