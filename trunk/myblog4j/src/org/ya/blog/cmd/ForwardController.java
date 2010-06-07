@@ -23,4 +23,12 @@ public class ForwardController extends MultiActionController {
 		log.info("转到后台管理页面.");
 		return "admin/main";
 	}
+	
+	@RequestMapping("/admin/articlemng.do")
+	public String toArticleMngPage(HttpServletRequest  request,HttpServletRequest response)
+	{
+		log.info("转到文章管理页面.");
+		
+		return "admin/articlemng";
+	}
 }
