@@ -23,13 +23,13 @@
 </style>
 <div class="bar">
 	<li class="menu">
-		<a href="/admin/toArticleMngPage.do">文章管理</a>
+		<a href="/admin/articlemng.do">文章管理</a>
 	</li>
 	<li class="menu">
-		<a href="/admin/toTypeMngPage.do">分类管理</a>
+		<a href="/admin/typemng.do">分类管理</a>
 	</li>
 	<li class="menu">
-		<a href="/admin/toPersonalMngPage.do">个人信息</a>
+		<a href="/admin/personalmng.do">个人信息</a>
 	</li>
 	<li class="menu">
 		<a href="/admin/logout.do">登出</a>
