@@ -1,13 +1,13 @@
 package org.ya.blog.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.ya.blog.idao.IMemberDAO;
 import org.ya.blog.orm.Member;
 
-import com.ibatis.sqlmap.client.SqlMapClient;
-
-public class MemberDAO implements IMemberDAO {
+public class MemberDAO extends SqlMapClientDaoSupport implements IMemberDAO  {
 
 	public MemberDAO() {
 	}
@@ -17,7 +17,7 @@ public class MemberDAO implements IMemberDAO {
 	 */
 	public void saveMember(Member instance) throws SQLException
 	{	
-		SqlMapFactory.SQLMAP.insert("addMember", instance);	
+		super.getSqlMapClient().insert("addMember", instance);	
 	}
 	
 	/* (non-Javadoc)
@@ -26,7 +26,7 @@ public class MemberDAO implements IMemberDAO {
 	public Member findByPk(int id) throws SQLException
 	{
 		
-		Member instance = (Member)SqlMapFactory.SQLMAP.queryForObject("findByPk",id);
+		Member instance = (Member)super.getSqlMapClient().queryForObject("findByPk",id);
 		return instance;
 	}
 	
@@ -35,7 +35,7 @@ public class MemberDAO implements IMemberDAO {
 	 */
 	public void updateMember(Member instance) throws SQLException
 	{
-		SqlMapFactory.SQLMAP.update("updateMember", instance);
+		super.getSqlMapClient().update("updateMember", instance);
 	}
 	
 	/* (non-Javadoc)
@@ -43,7 +43,11 @@ public class MemberDAO implements IMemberDAO {
 	 */
 	public void deleteMember(int id) throws SQLException
 	{
-		SqlMapFactory.SQLMAP.delete("delMember",id);
+		super.getSqlMapClient().delete("delMember",id);
 	}
 	
+	public List<Member> findByNickname(String nickname) throws SQLException
+	{
+		return super.getSqlMapClient().queryForList("findByNickname",nickname);
+	}
 }
