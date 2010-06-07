@@ -1,6 +1,7 @@
 package org.ya.blog.idao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.ya.blog.orm.Member;
 
@@ -35,4 +36,5 @@ public interface IMemberDAO {
 	 */
 	public abstract void deleteMember(int id) throws SQLException;
 
+	public abstract List<Member> findByNickname(String nickname) throws SQLException;
 }

@@ -3,13 +3,50 @@
 
 <beans>
 
-	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>/WEB-INF/jdbc.properties</value>
-			</list>
+ <bean id="dataSource" 
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName">
+            <value>com.mysql.jdbc.Driver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:mysql://localhost:3306/myblog4j</value>
+        </property>
+        <property name="username">
+            <value>root</value>
+        </property>
+        <property name="password">
+            <value>dreaming</value>
+        </property>
+    </bean> 
+	<bean id="sqlMapClient"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:sqlmapconfig.xml</value>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
 		</property>
 	</bean>
-
+	<bean id="TransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	<!-- BO -->
+	<bean id="MemberBO" class="org.ya.blog.bo.MemberBO" />
+	<!-- IDAO -->
+	<bean id="IMemberDAO" class="org.ya.blog.idao.IMemberDAO"
+		abstract="true" />
+	<!-- DAO -->
+	<bean id="ArticleDAO" class="org.ya.blog.dao.ArticleDAO" />
+	<bean id="MemberDAO" class="org.ya.blog.dao.MemberDAO" >
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient"/>
+		</property>
+	</bean>
+	<bean id="TagDAO" class="org.ya.blog.dao.TagDAO" />
+	<bean id="TypeDAO" class="org.ya.blog.dao.TypeDAO" />
 </beans>

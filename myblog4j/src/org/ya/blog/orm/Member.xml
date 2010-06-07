@@ -10,7 +10,14 @@
 		from member
 		where memberId = #value#
 	</select>
-	<select id="" resultClass="">
+	<select id="findByNickname" resultClass="org.ya.blog.orm.Member">
+		select memberId as memberId,
+		nickname as nickname,
+		password as password,
+		email as email,
+		alias as alias
+		from member
+		where nickname = #value#
 	</select>
 	<insert id="addMember" parameterClass="org.ya.blog.orm.Member">
 		insert into 
