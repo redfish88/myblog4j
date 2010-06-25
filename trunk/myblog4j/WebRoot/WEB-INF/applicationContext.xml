@@ -17,7 +17,8 @@
         <property name="password">
             <value>dreaming</value>
         </property>
-    </bean> 
+    </bean>
+    
 	<bean id="sqlMapClient"
 		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation">
@@ -27,6 +28,7 @@
 			<ref bean="dataSource" />
 		</property>
 	</bean>
+	
 	<bean id="TransactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource">
@@ -42,7 +44,7 @@
 		abstract="true" />
 	<!-- DAO -->
 	<bean id="ArticleDAO" class="org.ya.blog.dao.ArticleDAO" />
-	<bean id="MemberDAO" class="org.ya.blog.dao.MemberDAO" >
+	<bean id="MemberDAO" class="org.ya.blog.dao.MemberDAO" parent="IMemberDAO" >
 		<property name="sqlMapClient">
 			<ref bean="sqlMapClient"/>
 		</property>

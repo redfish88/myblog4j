@@ -1,6 +1,7 @@
 package org.ya.blog.idao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.ya.blog.orm.Type;
 
@@ -14,4 +15,5 @@ public interface ITypeDAO {
 
 	public abstract Type findByPk(int id) throws SQLException;
 
+	public abstract List<Type> findAll() throws SQLException;
 }
