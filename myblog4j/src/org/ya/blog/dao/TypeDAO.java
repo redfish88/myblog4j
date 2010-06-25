@@ -1,6 +1,7 @@
 package org.ya.blog.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.ya.blog.idao.ITypeDAO;
 import org.ya.blog.orm.Type;
@@ -18,6 +19,10 @@ public class TypeDAO implements ITypeDAO {
 		SqlMapFactory.SQLMAP.insert("addType",instance);
 	}
 	
+	public List<Type> findAll() throws SQLException
+	{
+		return SqlMapFactory.SQLMAP.queryForList("findAll");
+	}
 	/* (non-Javadoc)
 	 * @see org.ya.blog.dao.ITypeDAO#deleteType(int)
 	 */

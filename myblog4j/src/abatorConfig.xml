@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/myblog4j" userId="root" password="dreaming" >
+      <classPathEntry location="H:/Groupware/JDBC/MySql/mysql-connector-java-5.1.6-bin.jar" />
+    </jdbcConnection>
+    <javaModelGenerator targetPackage="org.ya.blog.orm" targetProject="myblog4j" />
+    <sqlMapGenerator targetPackage="org.ya.blog.orm" targetProject="myblog4j" />
+    <daoGenerator targetPackage="org.ya.blog.dao" targetProject="myblog4j" type="SPRING" />
+    <table schema="myblog4j" tableName="article" >
+
+    </table>
+  </abatorContext>
+</abatorConfiguration>

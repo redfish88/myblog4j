@@ -9,6 +9,13 @@
 		from Type
 		where typeId = #value#
 	</select>
+	<select id="findAll" resultClass="org.ya.blog.orm.Type">
+		select typeId as typeId,
+		type as type,
+		depict as depict,
+		rootId as rootId
+		from Type
+	</select>
 	<insert id="addType" parameterClass="org.ya.blog.orm.Type">
 		insert into 
 		type(typeId,type,depict,rootId)

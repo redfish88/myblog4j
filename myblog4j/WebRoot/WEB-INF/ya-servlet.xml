@@ -22,4 +22,8 @@
 		class="org.ya.blog.cmd.LoginController" />
 	
 	<bean id="ForwardController" class="org.ya.blog.cmd.ForwardController" />
+	
+	<bean id="TypeController" class="org.ya.blog.cmd.TypeController" />
+
+	<bean id="ProfileController" class="org.ya.blog.cmd.ProfileController" />
 </beans>
