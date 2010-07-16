@@ -33,6 +33,7 @@ public class MemberBO {
 		List<Member> list = memberDAO.findByNickname(nickname);
 		if(list.size() > 0)
 		{
+			System.out.println(MD5Encoder.encode(password));
 			if(list.get(0).getPassword().equals(MD5Encoder.encode(password)))
 			{
 				return list.get(0);

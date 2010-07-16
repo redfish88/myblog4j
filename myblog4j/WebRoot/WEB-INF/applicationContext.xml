@@ -39,16 +39,32 @@
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 	<!-- BO -->
 	<bean id="MemberBO" class="org.ya.blog.bo.MemberBO" />
+	<bean id="ArticleBO" class="org.ya.blog.bo.ArticleBO" />
+	<bean id="RoleBO" class="org.ya.blog.bo.RoleBO" />
+	<bean id="TagBO" class="org.ya.blog.bo.TagBO" />
+	<bean id="TypeBO" class="org.ya.blog.bo.TypeBO" />
 	<!-- IDAO -->
 	<bean id="IMemberDAO" class="org.ya.blog.idao.IMemberDAO"
 		abstract="true" />
 	<!-- DAO -->
-	<bean id="ArticleDAO" class="org.ya.blog.dao.ArticleDAO" />
+	<bean id="ArticleDAO" class="org.ya.blog.dao.ArticleDAO" >
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
 	<bean id="MemberDAO" class="org.ya.blog.dao.MemberDAO" parent="IMemberDAO" >
 		<property name="sqlMapClient">
 			<ref bean="sqlMapClient"/>
 		</property>
 	</bean>
-	<bean id="TagDAO" class="org.ya.blog.dao.TagDAO" />
-	<bean id="TypeDAO" class="org.ya.blog.dao.TypeDAO" />
+	<bean id="TagDAO" class="org.ya.blog.dao.TagDAO" >
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient"/>
+		</property>
+	</bean>
+	<bean id="TypeDAO" class="org.ya.blog.dao.TypeDAO" >
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient"/>
+		</property>
+	</bean>
 </beans>

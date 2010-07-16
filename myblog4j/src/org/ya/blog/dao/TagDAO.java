@@ -2,10 +2,11 @@ package org.ya.blog.dao;
 
 import java.sql.SQLException;
 
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.ya.blog.idao.ITagDAO;
 import org.ya.blog.orm.Tag;
 
-public class TagDAO implements ITagDAO {
+public class TagDAO extends SqlMapClientDaoSupport  implements ITagDAO {
 
 	public TagDAO() {
 	}
