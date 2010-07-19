@@ -24,4 +24,9 @@ PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
 </transactionManager>
 
 <sqlMap resource="org/ya/blog/orm/Member.xml" />
+<sqlMap resource="org/ya/blog/orm/Article.xml" />
+<sqlMap resource="org/ya/blog/orm/Role.xml" />
+<sqlMap resource="org/ya/blog/orm/Tag.xml" />
+<sqlMap resource="org/ya/blog/orm/Type.xml" />
+
 </sqlMapConfig>

@@ -40,6 +40,6 @@ public class TagDAO extends SqlMapClientDaoSupport  implements ITagDAO {
 	 */
 	public Tag findByPk(int id) throws SQLException
 	{
-		return (Tag)SqlMapFactory.SQLMAP.queryForObject("findByPk",id);
+		return (Tag)SqlMapFactory.SQLMAP.queryForObject("findTagByPk",id);
 	}
 }

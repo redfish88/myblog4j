@@ -17,14 +17,7 @@ public class TypeController {
 	
 	public TypeController() {
 	}
-	
-	@RequestMapping("/admin/typemng.do")
-	public String typemng(HttpServletRequest  request,HttpServletRequest response)
-	{
-		log.info("转至类别管理.");
-		
-		return "admin/typemng";
-	}
+
 	
 	@RequestMapping("/admin/addtype.do")
 	public String addType(HttpServletRequest  request,HttpServletRequest response)
@@ -34,6 +27,4 @@ public class TypeController {
 		
 		return "";
 	}
-	
-
 }

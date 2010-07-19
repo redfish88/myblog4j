@@ -26,7 +26,7 @@ public class MemberDAO extends SqlMapClientDaoSupport implements IMemberDAO  {
 	public Member findByPk(int id) throws SQLException
 	{
 		
-		Member instance = (Member)super.getSqlMapClient().queryForObject("findByPk",id);
+		Member instance = (Member)super.getSqlMapClient().queryForObject("findMemberByPk",id);
 		return instance;
 	}
 	

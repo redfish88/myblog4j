@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
 <sqlMap namespace="Role">
-	<select id="findByPk" resultClass="org.ya.blog.orm.Role">
+	<select id="findRoleByPk" resultClass="org.ya.blog.orm.Role">
 		select roleId as roleId,
 		roleName as roleName,
 		rolePermission as rolePermission
