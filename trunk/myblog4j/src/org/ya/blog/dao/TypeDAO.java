@@ -17,19 +17,19 @@ public class TypeDAO extends SqlMapClientDaoSupport implements ITypeDAO {
 	 */
 	public void addType(Type instance) throws SQLException
 	{
-		SqlMapFactory.SQLMAP.insert("addType",instance);
+		super.getSqlMapClientTemplate().insert("addType",instance);
 	}
 	
 	public List<Type> findAll() throws SQLException
 	{
-		return SqlMapFactory.SQLMAP.queryForList("findAll");
+		return super.getSqlMapClientTemplate().queryForList("findAll");
 	}
 	/* (non-Javadoc)
 	 * @see org.ya.blog.dao.ITypeDAO#deleteType(int)
 	 */
 	public void deleteType(int id) throws SQLException
 	{
-		SqlMapFactory.SQLMAP.delete("deleteType",id);
+		super.getSqlMapClientTemplate().delete("deleteType",id);
 	}
 	
 	/* (non-Javadoc)
@@ -37,7 +37,7 @@ public class TypeDAO extends SqlMapClientDaoSupport implements ITypeDAO {
 	 */
 	public void updateType(Type instance) throws SQLException
 	{
-		SqlMapFactory.SQLMAP.update("updateType", instance);
+		super.getSqlMapClientTemplate().update("updateType", instance);
 	}
 	
 	/* (non-Javadoc)
@@ -45,7 +45,7 @@ public class TypeDAO extends SqlMapClientDaoSupport implements ITypeDAO {
 	 */
 	public Type findByPk(int id) throws SQLException
 	{
-		return (Type)SqlMapFactory.SQLMAP.queryForObject("findByPk",id);
+		return (Type)super.getSqlMapClientTemplate().queryForObject("findByPk",id);
 	}
 
 }

@@ -43,7 +43,7 @@ public class ArticleDAO extends SqlMapClientDaoSupport  {
 	 */
 	public void findByPK(int id) throws SQLException
 	{
-		super.getSqlMapClientTemplate().queryForList("findByPk",id);
+		super.getSqlMapClientTemplate().queryForList("findArticleByPk",id);
 	}
 	
 	/**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
 <sqlMap namespace="Type">
-	<select id="findByPk" resultClass="org.ya.blog.orm.Type">
+	<select id="findTypeByPk" resultClass="org.ya.blog.orm.Type">
 		select typeId as typeId,
 		type as type,
 		depict as depict,
