@@ -1,0 +1,181 @@
+/* font-css */
+.f_txt {
+	font-size:12px;
+	font-family:"宋体"，"Times New Roman", Times, serif;
+	color:#8f7e0c;
+}
+.f_tit {
+	font-size:12px;
+	font-family:"宋体"，"Times New Roman", Times, serif;
+	color:#45ada9;
+	line-height:120%;
+}
+.f_cont {
+	font-size:12px;
+	font-family:"宋体"，"Times New Roman", Times, serif;
+	color:#8f7e0c;
+	line-height:120%;
+}
+.f_cont_bold {
+	font-size:12px;
+	font-family:"宋体"，"Times New Roman", Times, serif;
+	color:#8f7e0c;
+	line-height:120%;
+	font-weight:bold;
+}
+.f_h3 {
+	font-size:12px;
+	font-family:"宋体"，"Times New Roman", Times, serif;
+	color:#943415;
+	line-height:120%;
+}
+.f_h3_bold {
+	font-size:12px;
+	font-family:"宋体"，"Times New Roman", Times, serif;
+	color:#943415;
+	line-height:120%;
+	font-weight:bold;
+}
+h2 {
+	font-family:Georgia;
+	font-size:18px;
+	color:#0b636b;
+	line-height:28px;
+	font-weight:bold;
+	margin:0px;
+}
+p {
+	margin:10px;
+}
+
+/* div */
+body{
+	margin:0px;
+	padding:0px;
+	background: #fffde4 url(images/bodyBg.jpg) repeat-x;
+}
+div {
+	margin:0 auto;
+}
+
+#s_bg {
+	width:100%;
+	height:1000px;
+	background:url(images/headBg.jpg) no-repeat top center;
+}
+#s_top {
+	width:1000px;
+	height:180px;
+	}
+	
+#s_seach {
+	width:300px;
+	height:25px;
+	padding-top:10px;
+	padding-left:700px;
+}
+#s_seach input {
+	width:200px;
+	height:17px;
+	border:2px solid #fff;
+	background-color:#f9f5d2;
+}
+.s_txt {
+	width:900px;
+	margin-top:90px;
+	margin-bottom:30px;
+	padding-left:100px;
+}
+
+#s_center {
+	width:1000px;
+	height:100%;	
+}
+#leftPanel{
+	width:610px;
+	margin-top:27px;
+	padding:20px;
+	float:left;
+}
+#rightPanel{
+	width:290px;
+	margin-top:50px; 
+	padding:0 0 74px 36px;
+	float:left; 
+	background: url(images/rigthBg.jpg) no-repeat;
+
+}
+.pic1{
+	width:262px;
+	height:68px; 
+	margin-top:15px; 
+	padding:0px;
+	float:left; 
+	background:url(images/pic2.jpg) no-repeat}
+
+.s_article {
+	width:620px;
+	height:100%;
+	margin-top:10px;
+}
+.project{
+	width:266px;
+	margin-top:30px;
+	padding:0px;
+	float:left
+}
+.project ul{
+	width:260px;
+	margin:5px 0px 0px 0px;
+	padding:0px;
+	float:left;
+	display:block;
+}
+.project ul li{
+	width:260px;
+	margin:0px;
+	padding:0px;
+	float:left;
+	list-style:none;
+	display:block;
+	}
+.project ul li a{
+	width:250px;
+	height:21px;
+	margin:0px;
+	padding-left:10px;
+	float:left;
+	background:url(images/listbg.jpg) no-repeat;
+	font-family:Arial;
+	font-size:12px;
+	color:#bb9d59; 
+	line-height:18px;
+	text-decoration:none;
+}
+.project ul li a:hover{
+	font-weight:bold;
+	color:#943415;
+}
+.project ul li a.bottom{
+	width:250px;
+	height:20px;
+	margin:0px;
+	padding-left:10px;
+	float:left;
+	font-family:Arial;
+	font-size:12px;
+	color:#bb9d59;
+	line-height:18px;
+	text-decoration:none;
+	background:url(images/listbg.jpg) no-repeat;
+}
+.project ul li a.bottom:hover{
+	font-weight:bold;
+	color:#943415;
+}
+#footPanel{
+	width:1000px;
+	padding:25px 0 29px 0; 
+	margin-top:10px;
+	background:url(images/footbg.jpg) no-repeat center top;
+}
