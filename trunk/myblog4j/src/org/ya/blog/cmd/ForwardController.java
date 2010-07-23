@@ -33,14 +33,27 @@ public class ForwardController extends MultiActionController {
 	@RequestMapping("/admin/main.do")
 	public String toAdminMainPage(HttpServletRequest  request,HttpServletRequest response)
 	{
-		log.info("转到后台管理页面.");
+		log.debug("转到后台管理页面.");
 		return "admin/main";
+	}
+	
+	@RequestMapping("/admin/addtypepage.do")
+	public String addtypepage(HttpServletRequest  request,HttpServletRequest response)
+	{
+		log.debug("转到添加类别页面");
+		List<Type> list = null;
+		try {
+			list = typeBO.findAll();
+		} catch (SQLException e) {
+		}
+		request.setAttribute("TypeList", list);
+		return "admin/addtype";
 	}
 	
 	@RequestMapping("/admin/articlemng.do")
 	public String toArticleMngPage(HttpServletRequest  request,HttpServletRequest response)
 	{
-		log.info("转到文章管理页面.");
+		log.debug("转到文章管理页面.");
 		
 		return "admin/articlemng";
 	}
@@ -48,7 +61,7 @@ public class ForwardController extends MultiActionController {
 	@RequestMapping("/admin/typemng.do")
 	public String toTypeMngPage(HttpServletRequest  request,HttpServletRequest response) throws SQLException
 	{
-		log.info("转到类别管理");
+		log.debug("转到类别管理");
 		List<Type> list = this.typeBO.findAll();
 		request.setAttribute("TypeList", list);
 		return "admin/typemng";

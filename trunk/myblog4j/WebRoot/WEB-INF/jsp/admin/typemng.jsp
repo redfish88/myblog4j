@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <div id="center">
     	<li style="float:right;">
-    		<a href="#">添加类别</a>
+    		<a href="/admin/addtypepage.do">添加类别</a>
     	</li>
     	<br/>
     	<br/>
