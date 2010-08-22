@@ -35,20 +35,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			font-size: 12px;
 		}
 	</style>
+	<script type="text/javascript">
+		function deleteType(id)
+		{
+			
+		}
+	</script>
   </head>
   
   <body>
     
     <div id="center">
+    	
     	<li style="float:right;">
-    		<a href="/admin/addtypepage.do">添加类别</a>
+    		<a href="/admin/main.do">返回后台首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/addtypepage.do">添加类别</a>
     	</li>
     	<br/>
     	<br/>
     	<c:forEach items="${requestScope.TypeList}" var="ins">
     			<c:if test="${ins.rootId == 0}">
     			<li class="parent">
-    				<span><span>${ins.type }</span><span style="float:right;"><img style="cursor: pointer;" src="/admin/images/delete.gif" alt="删除" /></span></span>
+    				<span><span>${ins.type }</span><span style="float:right;"><img style="cursor: pointer;" src="/admin/images/delete.gif" onclick="javascript:deleteType(${ins.typeId });" alt="删除" /></span></span>
     			</li>
 					<c:forEach items="${requestScope.TypeList}" var="child">
 						<c:if test="${child.rootId == ins.typeId}">
