@@ -58,6 +58,13 @@ public class ForwardController extends MultiActionController {
 		return "admin/articlemng";
 	}
 	
+	@RequestMapping("/admin/filemng.do")
+	public String toFileMngPage(HttpServletRequest  request,HttpServletRequest response)
+	{
+		log.debug("转到文件管理页面.");
+		
+		return "admin/filemng";
+	}
 	@RequestMapping("/admin/typemng.do")
 	public String toTypeMngPage(HttpServletRequest  request,HttpServletRequest response) throws SQLException
 	{
