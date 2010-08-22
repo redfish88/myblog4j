@@ -29,6 +29,9 @@
 		<a href="/admin/typemng.do">分类管理</a>
 	</li>
 	<li class="menu">
+		<a href="/admin/filemng.do">文件管理</a>
+	</li>
+	<li class="menu">
 		<a href="/admin/personalmng.do">个人信息</a>
 	</li>
 	<li class="menu">
